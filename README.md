@@ -2,7 +2,7 @@
 
 ![epay-your-loans-on-time](https://github.com/tuanng1102/loan-repayment-prediction/assets/147653892/823dc2e6-426c-40b1-b7aa-914dd954a971)
 
-This code explores two machine learning models, Logistic Regression and XGBoost, for classifying loan applications based on loan data.
+This code explores two machine learning models, ```Logistic Regression``` and ```XGBoost```, for classifying loan applications based on loan data.
 
 ## Import Libraries
 
@@ -21,14 +21,14 @@ import xgboost as xgb
 ## Data Loading and Preprocessing:
 
 ### 1. Data Loading: 
-The code loads the loan data from "loan_data.csv" using Pandas.
+The code loads the loan data from "loan_data.csv" using ```Pandas```.
 
 ``` bash
 df = pd.read_csv("loan_data.csv")
 ```
 
 ### 2. Missing Value Handling: 
-Missing values are removed using dropna.
+Missing values are removed using ```df.dropna```.
 
 ``` bash
 df.dropna(inplace=True)
@@ -37,8 +37,8 @@ df.dropna(inplace=True)
 ### 3. Feature Separation: 
 Features (independent variables) and target variable (dependent variable) are separated:
 
-- X: Features
-- y: Target variable (loan approval status)
+- ```X```: Features
+- ```y```: Target variable (loan approval status)
 
 ``` bash
 X = df.iloc[:,:-1]
@@ -46,7 +46,7 @@ y = df.iloc[:,-1]
 ```
 
 ### 4. Encoding Categorical Data: 
-The categorical feature in column 1 is encoded using OneHotEncoder.
+The categorical feature in column 1 is encoded using ```OneHotEncoder```.
 
 ``` bash
 from sklearn.compose import ColumnTransformer
@@ -56,7 +56,7 @@ X = np.array(ct.fit_transform(X))
 ```
 
 ### 5. Data Splitting: 
-The data is split into training and testing sets for model evaluation using train_test_split.
+The data is split into training and testing sets for model evaluation using ```train_test_split```.
 
 ``` bash
 from sklearn.model_selection import train_test_split
@@ -64,7 +64,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 ```
 
 ### 6. Feature Scaling (Numerical Features): 
-Numerical features (except the first 12) are standardized using StandardScaler.
+Numerical features (except the first 12) are standardized using ```StandardScaler```.
 
 ``` bash
 from sklearn.preprocessing import StandardScaler
@@ -77,9 +77,9 @@ X_test[:,12:] = sc.transform(X_test[:,12:])
 
 ### 1. Logistic Regression with SMOTE:
 
-- SMOTE (Synthetic Minority Oversampling Technique) is applied to address potential class imbalance in the training data.
-- An SMOTE instance with k_neighbors=5 is created to generate synthetic samples for the minority class.
-- The up-sampled training data (X_train_sample, y_train_sample) is used to train a Logistic Regression model.
+- ```SMOTE``` (Synthetic Minority Oversampling Technique) is applied to address potential class imbalance in the training data.
+- An ```SMOTE``` instance with ```k_neighbors``` = 5 is created to generate synthetic samples for the minority class.
+- The up-sampled training data ```X_train_sample```, ```y_train_sample``` is used to train a Logistic Regression model.
 - The model's performance is evaluated using classification report and confusion matrix.
 
 ``` bash
@@ -104,7 +104,7 @@ ConfusionMatrixDisplay(cm_log).plot()
 
 ### 2. XGBoost with NO SMOTE:
 
-- An XGBoost model with n_estimators=200 and random state set to 42 is trained on the original training data (X_train, y_train).
+- An ```XGBoost``` model with ```n_estimators``` = 200 and random state set to 42 is trained on the original training data ```X_train```, ```y_train```.
 - The model's performance is evaluated using classification report and confusion matrix.
 
 ``` bash

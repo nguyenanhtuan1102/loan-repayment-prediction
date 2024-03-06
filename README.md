@@ -122,7 +122,3 @@ ConfusionMatrixDisplay(cm_xgb).plot()
 ![17](https://github.com/tuanng1102/loan-repayment-prediction/assets/147653892/3dce8d76-8a44-4c95-a212-42c89b6a7798)
 
 ![15](https://github.com/tuanng1102/loan-repayment-prediction/assets/147653892/09361c3a-a0dc-4ea1-8223-0d0092d50a4e)
-
-The confusion matrix visualizations are not included in the code snippet, but they are generated using ConfusionMatrixDisplay.plot().
-Overall, this code demonstrates the application of two different machine learning models for loan data classification. Comparing the models' performance based on classification reports and confusion matrices can help you choose the most suitable model for your specific problem.
-

@@ -1,6 +1,6 @@
 # Loan Data Classification with Logistic Regression and XGBoost
 
-![epay-your-loans-on-time](https://github.com/tuanng1102/loan-repayment-prediction/assets/147653892/823dc2e6-426c-40b1-b7aa-914dd954a971)
+![loan-repayment](https://github.com/user-attachments/assets/207bc798-a14f-414d-a196-7538e7184ae1)
 
 This code explores two machine learning models, ```Logistic Regression``` and ```XGBoost```, for classifying loan applications based on loan data.
 
